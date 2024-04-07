@@ -53,12 +53,7 @@ class _MeasureSizeBuilderState extends State<MeasureSizeBuilder> {
     // Return a NotificationListener to listen for size changes.
     return NotificationListener(
       onNotification: (notification) {
-        if (!(notification is ScrollNotification ||
-            notification is ScrollMetricsNotification)) {
-          _debouncer.run(() {
-            _setSize(context.size!);
-          });
-        }
+        _setSize(context.size!);
         return true;
       },
       child: widget.builder(context, _size),
