@@ -124,7 +124,7 @@ MeasureSizeBuilder(
 )
 ```
 
-Even when the size of widgets like ExpansionTile changes dynamically, MeasureSizeBuilder detects this and returns the changed size. You can control how quickly the widget size changes are detected using the `sensitivity` property. The shorter the Duration value for sensitivity, the more frequently the widget size changes are returned. However, note that with frequent size changes, the widget inside MeasureSizeBuilder will be re-rendered each time. <b>If you only need the final size of the widget without real-time access to the size values, provide a generous duration<br/>.
+Even when the size of widgets like ExpansionTile changes dynamically, MeasureSizeBuilder detects this and returns the changed size. You can control how quickly the widget size changes are detected using the `sensitivity` property. The shorter the Duration value for sensitivity, the more frequently the widget size changes are returned. However, note that with frequent size changes, the widget inside MeasureSizeBuilder will be re-rendered each time. <b>If you only need the final size of the widget without real-time access to the size values, provide a generous duration.<br/>
 
 
 
