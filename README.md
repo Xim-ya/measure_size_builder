@@ -110,7 +110,7 @@ Widgets returned inside MeasureSizeBuilder can access the `size` value to handle
 
 ```dart
 MeasureSizeBuilder(  
-  sensitivity: Duration.zero, 
+  sensitivity: Duration.zero, // <-- Set Zero Duration
   builder: (context, size) {  
     log('Widget Size that changes dynamically : $size');  
     return const ExpansionTile(  
