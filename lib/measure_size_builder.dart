@@ -31,7 +31,7 @@ class _MeasureSizeBuilderState extends State<MeasureSizeBuilder> {
   void initState() {
     super.initState();
     _debouncer = _Debouncer(
-      widget.sensitivity ?? const Duration(milliseconds: 100),
+      widget.sensitivity ?? const Duration(milliseconds: 50),
     );
   }
 
