@@ -1,3 +1,8 @@
-## 0.0.1
+## 1.0.0
 
-* TODO: Describe initial release.
+* Initial Version
+
+
+## 1.0.1
+
+* Performance optimization (minimization of rebuilding)

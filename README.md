@@ -44,10 +44,10 @@ To use the Single Import Generator package in your Flutter project, follow these
 1. Depend on it
 
 Add the following line to your project's `pubspec.yaml` file under the `dependencies` section:
-
+   
 ```yaml
 dependencies:
-  measure_size_builder: ^1.0.0
+  measure_size_builder: ^1.0.1
 ```
 
 2. Install it

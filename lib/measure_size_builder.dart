@@ -30,32 +30,35 @@ class _MeasureSizeBuilderState extends State<MeasureSizeBuilder> {
   @override
   void initState() {
     super.initState();
+    // Set Debouncer duration
     _debouncer = _Debouncer(
       widget.sensitivity ?? const Duration(milliseconds: 50),
     );
+
+    // Add a callback to get the size of the widget after rendering.
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      _size = context.size ?? Size.zero;
+    });
   }
 
   /// Method to set the size of the widget.
   void _setSize(Size newSize) {
-    if (_size != newSize) {
-      setState(() {
-        _size = newSize;
-      });
-    }
+    setState(() {
+      _size = newSize;
+    });
   }
 
   @override
   Widget build(BuildContext context) {
-    // Add a callback to get the size of the widget after rendering.
-    WidgetsBinding.instance.addPostFrameCallback((_) {
-      _setSize(context.size!);
-    });
     // Return a NotificationListener to listen for size changes.
     return NotificationListener(
       onNotification: (notification) {
-        _debouncer.run(() {
-          _setSize(context.size!);
-        });
+        final newSize = context.size;
+        if (_size != newSize) {
+          _debouncer.run(() {
+            _setSize(context.size!);
+          });
+        }
         return true;
       },
       child: widget.builder(context, _size),
