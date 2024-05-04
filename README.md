@@ -47,7 +47,7 @@ Add the following line to your project's `pubspec.yaml` file under the `dependen
    
 ```yaml
 dependencies:
-  measure_size_builder: ^1.0.1
+  measure_size_builder: ^1.0.2
 ```
 
 2. Install it

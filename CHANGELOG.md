@@ -6,3 +6,7 @@
 ## 1.0.1
 
 * Performance optimization (minimization of rebuilding)
+
+## 1.0.2
+
+* Code Refactoring
