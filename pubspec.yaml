@@ -1,6 +1,6 @@
 name: measure_size_builder
 description: "Simplest way to get dynamic size of widget"
-version: 1.0.2
+version: 1.0.3
 homepage: https://github.com/Xim-ya/measure_size_builder
 
 environment:

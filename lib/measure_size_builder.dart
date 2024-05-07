@@ -37,15 +37,17 @@ class _MeasureSizeBuilderState extends State<MeasureSizeBuilder> {
 
     // Add a callback to get the size of the widget after rendering.
     WidgetsBinding.instance.addPostFrameCallback((_) {
-      _size = context.size ?? Size.zero;
+      _setSize(context.size ?? Size.zero);
     });
   }
 
   /// Method to set the size of the widget.
   void _setSize(Size newSize) {
-    setState(() {
-      _size = newSize;
-    });
+    if (_size != newSize) {
+      setState(() {
+        _size = newSize;
+      });
+    }
   }
 
   @override
@@ -53,12 +55,9 @@ class _MeasureSizeBuilderState extends State<MeasureSizeBuilder> {
     // Return a NotificationListener to listen for size changes.
     return NotificationListener(
       onNotification: (notification) {
-        final newSize = context.size;
-        if (_size != newSize) {
-          _debouncer.run(() {
-            _setSize(context.size!);
-          });
-        }
+        _debouncer.run(() {
+          _setSize(context.size!);
+        });
         return true;
       },
       child: widget.builder(context, _size),
